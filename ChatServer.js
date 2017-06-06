@@ -50,6 +50,8 @@ app.get('/',function(req,res){
     res.sendFile(__dirname+'/index.html');
 });
 
-app.use('/img', express.static(__dirname + "/public"));
+app.use('/img', express.static(__dirname + "/public/img"));
+app.use('/js', express.static(__dirname + "/public/js"));
+app.use('/css', express.static(__dirname + "/public/css"));
 console.log('Server Listening on port 1000');
 server.listen(1000);
