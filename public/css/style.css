@@ -1,15 +1,16 @@
 #message{
     height: 500px;
-    border: 1px solid gray;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
+    overflow: auto;
+}
+body{
     background: url("/img/bg.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    overflow: auto;
 }
 
 #message::-webkit-scrollbar-track
@@ -32,8 +33,38 @@
     float: right;
     color: green;
     font-weight: bold;
-    margin-right: 10px;
 }
 #welcome{
     display: none;
+}
+
+.footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background:#999;
+}
+#chat-msg,#sendBtn{
+    height:70px;
+}
+
+.othersMsg{
+    clear: both;
+    float: right;
+}
+.msgStyle{
+    border: 1px solid gray;
+    border-radius: 9px;
+    padding: 5px;
+    width: 50%;
+    background-color: #FFF;
+    font-size: 11px;
+    clear: both;
+}
+/* IE 6 */
+* html .footer {
+    position:absolute;
+    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }

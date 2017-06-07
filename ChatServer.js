@@ -1,18 +1,3 @@
-/*var url=require('url');
-var request = require('request');
-var express = require('express');
-var options = {protocol:"http:",host:"search.twitter.com",pathname:"/search.json",query:{q:"codeschool"}};
-var searchURL = url.format(options);
-console.log(searchURL);
-var app = express();
-app.get('/',function(req,res){
-     request(searchURL,function(err,res,body){      
-        console.log(err);
-        req.pipe(body);
-
-    });
-});
-app.listen(1000);*/
 var express = require('express');
 var app=express();
 var server =require('http').createServer(app);
@@ -22,7 +7,6 @@ io.on('connection',function(client){
     client.on('join',function(name){
         client.name = name;
         var rgb = [];
-
         for(var i = 0; i < 3; i++)
             rgb.push(Math.floor(Math.random() * 255));
         client.color = rgb.join(',');
